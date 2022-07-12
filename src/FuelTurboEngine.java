@@ -30,6 +30,7 @@ class FuelTurboEngine extends FuelEngine {
     public int accelerate() {
         System.out.println(
                 "A-р-р-р-р-р - звук мотора мощностью " + getHorsepower() + " Л.С. и " + turbineCount + " турбин");
-        return getHorsepower() * turbineCount;
+        int horsepower = getHorsepower();
+        return horsepower * turbineCount;
     }
 }

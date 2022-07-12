@@ -35,5 +35,8 @@ public class Main {
         car.pressStopPedal();
 
         car.getCurrentSpeed();
+
+        car.setLicensePlate("A323AT");
+        car.getLicensePlate();
     }
 }

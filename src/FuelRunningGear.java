@@ -14,7 +14,7 @@ public class FuelRunningGear implements IRunningGear {
     /**
      * Тормозные диски ходовой части автомобиля.
      */
-    private final IBrakeSystem ceramicBrakeSystem;
+    private final IBrakeSystem brakeSystem;
     /**
      * Текущая скорость ходовой части.
      */
@@ -30,7 +30,7 @@ public class FuelRunningGear implements IRunningGear {
     public FuelRunningGear(IEngine engine, IFuelSystem fuelTank, IBrakeSystem brakeSystem) {
         this.engine = engine;
         this.fuelTank = fuelTank;
-        this.ceramicBrakeSystem = brakeSystem;
+        this.brakeSystem = brakeSystem;
 
         System.out.println("Собрана ходовая часть автомобиля из двигателя, топливной системы и тормозных дисков");
     }
@@ -54,7 +54,7 @@ public class FuelRunningGear implements IRunningGear {
      */
     @Override
     public void brake() {
-        int brakeForce = ceramicBrakeSystem.brake();
+        int brakeForce = brakeSystem.brake();
         currentSpeed = currentSpeed - brakeForce;
     }
 

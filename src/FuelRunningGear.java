@@ -10,7 +10,7 @@ public class FuelRunningGear implements IRunningGear {
     /**
      * Топливная система ходовой части автомобиля.
      */
-    private final IFuelSystem fuelTank;
+    private final IFuelSystem fuelSystem;
     /**
      * Тормозные диски ходовой части автомобиля.
      */
@@ -24,12 +24,12 @@ public class FuelRunningGear implements IRunningGear {
      * Конструктор ходовой части.
      *
      * @param engine      двигатель создаваемой ходовой части
-     * @param fuelTank    топливная система для создаваемой ходовой части
+     * @param fuelSystem  топливная система для создаваемой ходовой части
      * @param brakeSystem тормозные диски для создаваемой ходовой части
      */
-    public FuelRunningGear(IEngine engine, IFuelSystem fuelTank, IBrakeSystem brakeSystem) {
+    public FuelRunningGear(IEngine engine, IFuelSystem fuelSystem, IBrakeSystem brakeSystem) {
         this.engine = engine;
-        this.fuelTank = fuelTank;
+        this.fuelSystem = fuelSystem;
         this.brakeSystem = brakeSystem;
 
         System.out.println("Собрана ходовая часть автомобиля из двигателя, топливной системы и тормозных дисков");
@@ -41,7 +41,7 @@ public class FuelRunningGear implements IRunningGear {
     @Override
     public void accelerate() {
         int engineVolume = engine.getVolume();
-        boolean isFuelPushedToEngine = fuelTank.pushFuelToEngine(engineVolume);
+        boolean isFuelPushedToEngine = fuelSystem.pushFuelToEngine(engineVolume);
 
         if (isFuelPushedToEngine) {
             int acceleration = engine.accelerate();
@@ -65,7 +65,7 @@ public class FuelRunningGear implements IRunningGear {
      */
     @Override
     public int getCurrentFuelVolume() {
-        return fuelTank.getCurrentFuelVolume();
+        return fuelSystem.getCurrentFuelVolume();
     }
 
     /**
@@ -75,7 +75,7 @@ public class FuelRunningGear implements IRunningGear {
      */
     @Override
     public void fillUpFuel(int volume) {
-        fuelTank.fillUpFuel(volume);
+        fuelSystem.fillUpFuel(volume);
     }
 
     /**

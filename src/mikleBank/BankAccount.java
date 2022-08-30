@@ -14,14 +14,12 @@ public class BankAccount implements IBankAccount {
     }
 
     @Override
-    public int withdraw(int downToBalance) {
+    public void withdraw(int downToBalance) {
         balance = balance-downToBalance;
-        return balance;
     }
 
     @Override
-    public int getBalance() {
+    public void getBalance() {
        System.out.println("Текущий баланс " + balance + " руб");
-       return balance;
     }
 }

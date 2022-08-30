@@ -4,8 +4,8 @@ public interface IBankAccount {
 
     void deposit(int upToBalance);
 
-    int withdraw(int downToBalance);
+    void withdraw(int downToBalance);
 
-    int getBalance();
+    void getBalance();
 
 }

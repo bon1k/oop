@@ -139,7 +139,7 @@ public class FuelSystem implements IFuelSystem {
 
         if (tankVolume < fuelToFillUpVolume + currentFuelVolume){
             int overFuelVolume = tankVolume - fuelToFillUpVolume + currentFuelVolume;
-            System.out.println(overFuelVolume + " л. топлива не поместилось в бензобак");
+            System.out.println(Math.abs(overFuelVolume) + " л. топлива не поместилось в бензобак");
             currentFuelVolume = tankVolume;
 
         }else {

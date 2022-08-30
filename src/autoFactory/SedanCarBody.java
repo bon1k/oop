@@ -1,3 +1,5 @@
+package autoFactory;
+
 /**
  * Класс кузова седана.
  */

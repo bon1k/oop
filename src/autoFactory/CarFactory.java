@@ -1,3 +1,5 @@
+package autoFactory;
+
 public class CarFactory {
 
     public Car buildCar(String vin, int initialTankVolume, int horsepower, int engineVolume, String carBodyType,

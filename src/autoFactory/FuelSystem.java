@@ -1,13 +1,15 @@
+package autoFactory;
+
 /**
- * Это класс нашей топливной системы с именем FuelSystem.
+ * Это класс нашей топливной системы с именем autoFactory.FuelSystem.
  * <p>
  * Слово public означает то, что этот класс доступен из любого места кода внутри нашей программы.
  * <p>
  * Слово class означает то, что здесь происходит определение класса.
  * <p>
  * Слово implements означает то, что данный класс реализует или, иногда говорят, имплементирует
- * интерфейс IFuelSystem. Это значит, что клас обязан указать реализацию для каждого метода
- * из интерфейса IFuelSystem.
+ * интерфейс autoFactory.IFuelSystem. Это значит, что клас обязан указать реализацию для каждого метода
+ * из интерфейса autoFactory.IFuelSystem.
  */
 public class FuelSystem implements IFuelSystem {
 
@@ -134,7 +136,15 @@ public class FuelSystem implements IFuelSystem {
          * В данной строке кода мы увеличиваем значение поля currentFuelVolume на значение
          * fuelToFillUpVolume.
          */
-        currentFuelVolume = currentFuelVolume + fuelToFillUpVolume;
+
+        if (tankVolume < fuelToFillUpVolume + currentFuelVolume){
+            int overFuelVolume = tankVolume - fuelToFillUpVolume + currentFuelVolume;
+            System.out.println(overFuelVolume + " л. топлива не поместилось в бензобак");
+            currentFuelVolume = tankVolume;
+
+        }else {
+            currentFuelVolume = currentFuelVolume + fuelToFillUpVolume;
+        }
 
         /*
          * В данной строке мы выводим в консоль звук пополнения бензобака, так как обычно

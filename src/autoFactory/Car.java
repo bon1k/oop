@@ -1,7 +1,9 @@
+package autoFactory;
+
 /**
  * Класс автомобиля.
  */
-class Car implements ICar {
+public class Car implements ICar {
 
     /**
      * Уникальный идентификатор автомобиля.

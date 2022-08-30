@@ -1,3 +1,5 @@
+package autoFactory;
+
 /**
  * Класс бензиновой ходовой части автомобиля.
  */
@@ -55,7 +57,10 @@ public class FuelRunningGear implements IRunningGear {
     @Override
     public void brake() {
         int brakeForce = brakeSystem.brake();
-        currentSpeed = currentSpeed - brakeForce;
+        if (currentSpeed <= 100){
+            currentSpeed = 0;
+        }else {
+            currentSpeed = currentSpeed - brakeForce;}
     }
 
     /**

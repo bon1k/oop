@@ -121,4 +121,10 @@ public class Car implements ICar {
     public void getCurrentFuelVolume() {
         System.out.println("Уровень топлива на отметке " + runningGear.getCurrentFuelVolume() + " л.");
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "vin='" + vin + '\'' + '}';
+    }
 }

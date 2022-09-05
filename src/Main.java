@@ -2,8 +2,6 @@ import autoFactory.Car;
 import autoFactory.CarFactory;
 import autoFactory.CarsharingParking;
 
-import java.util.ArrayList;
-
 public class Main {
         public static void main(String[] args) {
       /*      byte b = 127;
@@ -35,8 +33,47 @@ public class Main {
 
             System.out.println(cars[3]);
             System.out.println("Создано автомобилей " + cars.length);*/
+            CarFactory carFactory = new CarFactory();
 
-            CarsharingParking carsharingParking = new CarsharingParking(10);
+            Car opel = carFactory.buildCar("111-11-110" ,40,50,1,
+                    "SEDAN",false,0);
+            Car ford = carFactory.buildCar("111-11-111" ,40,50,1,
+                    "SEDAN",false,0);
+            Car mazda = carFactory.buildCar("111-11-112" ,40,50,1,
+                    "SEDAN",false,0);
+            Car bmw = carFactory.buildCar("111-11-113" ,40,50,1,
+                    "SEDAN",false,0);
+
+            CarsharingParking carsharingParking = new CarsharingParking(3);
+
+            carsharingParking.getAvailableCarsNumber();
+            carsharingParking.getAvailableFreeSpacesNumber();
+            carsharingParking.rentCar();
+            carsharingParking.returnCar(opel);
+            carsharingParking.returnCar(ford);
+            carsharingParking.returnCar(mazda);
+            carsharingParking.getAvailableCarsNumber();
+            carsharingParking.getAvailableFreeSpacesNumber();
+            carsharingParking.getCarVinByPlaceNumber(1);
+            carsharingParking.getCarVinByPlaceNumber(2);
+            carsharingParking.getCarVinByPlaceNumber(3);
+            carsharingParking.returnCar(bmw);
+            carsharingParking.rentCar();
+            carsharingParking.rentCar();
+            carsharingParking.getAvailableCarsNumber();
+            carsharingParking.getAvailableFreeSpacesNumber();
+            carsharingParking.returnCar(bmw);
+            carsharingParking.getAvailableCarsNumber();
+            carsharingParking.getCarVinByPlaceNumber(1);
+            carsharingParking.getCarVinByPlaceNumber(2);
+            carsharingParking.getCarVinByPlaceNumber(3);
+            carsharingParking.rentCar();
+            carsharingParking.rentCar();
+            carsharingParking.getCarVinByPlaceNumber(1);
+            carsharingParking.getAvailableCarsNumber();
+            carsharingParking.getAvailableFreeSpacesNumber();
+
+
 
 
 
